@@ -17,7 +17,7 @@ from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 
-genai.configure(api_key=os.getenv("AIzaSyAbmIkulivC_ZjvyTugkAHs8gHJLbWTSr4"))
+genai.configure(api_key=os.getenv("gemini_api_key"))
 
 # ============================================================
 # CONFIG
@@ -27,7 +27,7 @@ EMBED_MODEL = "all-MiniLM-L6-v2"
 INDEX_PATH = "rag_index"
 GEMINI_MODEL = "gemini-2.5-flash"
 
-genai.configure(api_key=os.getenv("AIzaSyAbmIkulivC_ZjvyTugkAHs8gHJLbWTSr4"))
+genai.configure(api_key=os.getenv("gemini_api_key"))
 
 # ============================================================
 # DATA STRUCTURE
@@ -271,3 +271,4 @@ if st.button("Get Answer") and question:
         st.write("•", c)
 
 st.caption("Agentic RAG | Gemini 2.5 Flash | Portfolio-Ready")
+
